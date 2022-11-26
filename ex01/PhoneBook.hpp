@@ -3,11 +3,11 @@
 #include "Contact.hpp"
 
 class PhoneBook{
-	private:
-		Contact	contact[8];
+	Contact	contact[8];
 	public :
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	search(void);
+		void	search(std::string *str);
+		void	add(int i);
 };
 #endif

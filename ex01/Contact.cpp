@@ -8,18 +8,27 @@ Contact::~Contact(void)
 {
 }
 
-void	Contact::add(void)
+char	Contact::*get_fn(void)
 {
-	char	*s;
+	return (this->first_name);
+}	
 
-	std::cout << "First Name*: ";
-	std::cin >> s;
-	std::cout << "Last Name*: ";
-	std::cin >> s;
-	std::cout << "Nickname*: ";
-	std::cin >> s;	
-	std::cout << "Phone Number*: ";
-	std::cin >> s;
-	std::cout << "Darkest Secret*: ";
-	std::cin >> s;
+char    Contact::*get_ln(void)
+{
+	return this->last_name;
+}
+
+char    Contact::*get_nickname(void)
+{
+	return this->nickname;
+}
+
+char    Contact::*get_pn(void)
+{
+	return this->phone_num;
+}
+
+char    *get_secret(void)
+{
+	return this->secret;
 }
