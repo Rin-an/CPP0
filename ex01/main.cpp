@@ -6,7 +6,6 @@ int	main(void)
 	PhoneBook 	pb;
 	int			c;
 	int			i;
-	Contact		c;
 
 	std::cout << "*****MENU*****" << std::endl;
 	std::cout << "1)ADD" << std::endl;
@@ -18,12 +17,11 @@ int	main(void)
 		if (i == 8)
 			i = 0;
 		std::cin >> c;
-		c = pn.get_contact()[i++];
 		switch (c)
 		{
 			case (1):
 				std::cout << "In add option" << std::endl;
-				c.add();
+				pb.add(i);
 				break;
 			case (2):
 				std::cout << "In search option" << std::endl;

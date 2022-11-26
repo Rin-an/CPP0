@@ -15,18 +15,18 @@ void	PhoneBook::add(int i)
 
 	c = this->contact[i];
 	std::cout << "First Name*: ";
-	
+	c.set_fn();
 	std::cout << "Last Name*: ";
-	std::cin >> this->contact[i].last_name;
+	c.set_ln();
 	std::cout << "Nickname*: ";
-	std::cin >> this->contact[i].nickname;	
+	c.set_nickname();
 	std::cout << "Phone Number*: ";
-	std::cin >> this->contact[i].phone_num;
+	c.set_pn();
 	std::cout << "Darkest Secret*: ";
-	std::cin >> this->contact[i].secret;
+	c.set_secret();
 }
 
-void	PhoneBook::search(std::string *str)
+void	PhoneBook::search(void)
 {
 	int	i;
 	int	index;

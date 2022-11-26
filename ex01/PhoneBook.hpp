@@ -7,7 +7,7 @@ class PhoneBook{
 	public :
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	search(std::string *str);
+		void	search(void);
 		void	add(int i);
 };
 #endif
