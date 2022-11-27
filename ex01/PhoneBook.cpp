@@ -10,20 +10,26 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::add(int i)
 {
-	char	*s;
 	Contact	c;
+	std::string	str;
 
 	c = this->contact[i];
+	std::cin.clear();
 	std::cout << "First Name*: ";
-	c.set_fn();
+	std::getline(std::cin, str);
+	c.set_fn(str);
 	std::cout << "Last Name*: ";
-	c.set_ln();
+	std::getline(std::cin, str);
+	c.set_ln(str);
 	std::cout << "Nickname*: ";
-	c.set_nickname();
+	std::getline(std::cin, str);
+	c.set_nickname(str);
 	std::cout << "Phone Number*: ";
-	c.set_pn();
+	std::getline(std::cin, str);
+	c.set_pn(str);
 	std::cout << "Darkest Secret*: ";
-	c.set_secret();
+	std::getline(std::cin, str);
+	c.set_secret(str);
 }
 
 void	PhoneBook::search(void)
@@ -32,6 +38,7 @@ void	PhoneBook::search(void)
 	int	index;
 	Contact	*c;
 	char	tab[4][11] = {"index", "first name", "last name", "nickname"};
+
 
 	i = -1;
 	index = -1;

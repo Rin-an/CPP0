@@ -33,28 +33,28 @@ std::string    Contact::get_secret(void) const
 	return this->secret;
 }
 
-void	Contact::set_fn(void)	
+void	Contact::set_fn(std::string str)	
 {
-	std::getline(std::cin, this->first_name);
+	this->first_name = str;
 }
 
-void    Contact::set_ln(void)
+void    Contact::set_ln(std::string str)
 {
-	std::getline(std::cin, this->last_name);
+	this->last_name = str;
 }
 
-void    Contact::set_nickname(void)
+void    Contact::set_nickname(std::string str)
 {
-	std::getline(std::cin, this->nickname);
+	this->nickname = str;
 }
 
-void    Contact::set_pn(void)
+void    Contact::set_pn(std::string str)
 {
-	std::getline(std::cin, this->phone_num);
+	this->phone_num = str;
 }
 
-void    Contact::set_secret(void)
+void    Contact::set_secret(std::string str)
 {
-	std::getline(std::cin, this->secret);
+	this->secret = str;
 }
 
