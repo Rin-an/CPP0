@@ -40,6 +40,7 @@ void	Contact::set_fn(std::string str)
 
 void    Contact::set_ln(std::string str)
 {
+
 	this->last_name = str;
 }
 
@@ -49,12 +50,12 @@ void    Contact::set_nickname(std::string str)
 }
 
 void    Contact::set_pn(std::string str)
-{
+{	
 	this->phone_num = str;
 }
 
 void    Contact::set_secret(std::string str)
-{
+{	
 	this->secret = str;
 }
 

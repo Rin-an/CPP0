@@ -1,6 +1,6 @@
 NAME = phonebook
-HEADERS = PhoneBook.hpp Contact.hpp
-SRCS = PhoneBook.cpp Contact.cpp main.cpp
+HEADERS = PhoneBook.hpp Contact.hpp utils.hpp
+SRCS = PhoneBook.cpp Contact.cpp main.cpp utils.cpp
 OBJS := $(SRCS:.cpp=.o)
 
 RM = rm -rf
