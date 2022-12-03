@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+#include <sstream>
 
 void	ft_resize_print(std::string str)
 {
@@ -11,35 +12,35 @@ void	ft_resize_print(std::string str)
 	std::cout << "|";
 }
 
-void	search_print(Contact *c)
+int	search_print(Contact *c)
 {
-	int	i;
+	int					i;
+	std::stringstream	istream;
+	std::string			s;
 
-	i = 0;
 	std::cout << "So... who do you want to check now? Please enter the related index" << std::endl;
-	while (i < 1 || i > 8)
+	std::getline(std::cin, s);
+	istream << s;
+	istream >> i;
+	std::cin.clear();
+	if (istream && i <= 8 && i >= 1)
 	{
-		std::cin >> i;
-		std::cin.ignore();
-		if (i > 8 || i < 1)
-			std::cout << "Wrong index please enter a valid one. P.S: you gonna be stuck in this loop until you enter a valid index lol." << std::endl;
-		else
-		{
-			std::cout << std::right << std::setw(10) <<c[i - 1].get_fn();
-			std::cout << "|";
-			std::cout << std::right << std::setw(10) <<c[i - 1].get_ln();
-			std::cout << "|";
-			std::cout << std::right << std::setw(10) <<c[i - 1].get_nickname();
-			std::cout << "|";
-			std::cout << std::right << std::setw(10) <<c[i - 1].get_pn();
-			std::cout << "|";
-			std::cout << std::right << std::setw(10) <<c[i - 1].get_secret();
-			std::cout << "|" << std::endl;
-		}
+		std::cout <<"First Name: " ;
+		std::cout << c[i - 1].get_fn() << std::endl;
+		std::cout << "Last Name: ";
+		std::cout << c[i - 1].get_ln() << std::endl;
+		std::cout << "Nickname: ";
+		std::cout << c[i - 1].get_nickname() << std::endl;
+		std::cout << "Phone Number: ";
+		std::cout << c[i - 1].get_pn() << std::endl;
+		std::cout << "Darkest Secret: ";
+		std::cout << c[i - 1].get_secret() << std::endl;;
+		return (1);
 	}
+	return (0);
 }
 
-void	add_fn(Contact c)
+void	add_fn(Contact *c)
 {
 	std::string str;
 
@@ -48,22 +49,22 @@ void	add_fn(Contact c)
 		std::cout << "First Name*: ";
 		std::getline(std::cin, str);
 	}
-	c.set_fn(str);
+	c->set_fn(str);
 }
 
-void	add_ln(Contact c)
+void	add_ln(Contact *c)
 {
 	std::string str;
 
 	while (!str.size())
 	{
-		std::cout << "Lasr Name*: ";
+		std::cout << "Last Name*: ";
 		std::getline(std::cin, str);
 	}
-	c.set_ln(str);
+	c->set_ln(str);
 }
 
-void	add_nn(Contact c)
+void	add_nn(Contact *c)
 {
 	std::string str;
 
@@ -72,10 +73,10 @@ void	add_nn(Contact c)
 		std::cout << "Nickname*: ";
 		std::getline(std::cin, str);
 	}
-	c.set_nickname(str);
+	c->set_nickname(str);
 }
 
-void	add_pn(Contact c)
+void	add_pn(Contact *c)
 {
 	std::string str;
 
@@ -84,10 +85,10 @@ void	add_pn(Contact c)
 		std::cout << "Phone Number*: ";
 		std::getline(std::cin, str);
 	}
-		c.set_pn(str);
+	c->set_pn(str);
 }
 
-void	add_secret(Contact c)
+void	add_secret(Contact *c)
 {
 	std::string str;
 
@@ -96,5 +97,5 @@ void	add_secret(Contact c)
 		std::cout << "Darkest Secret*: ";
 		std::getline(std::cin, str);
 	}
-		c.set_secret(str);
+	c->set_secret(str);
 }

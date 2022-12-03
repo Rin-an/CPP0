@@ -30,10 +30,12 @@ int	main(void)
 		{
 			pb.add(pb.contact, i++);
 			std::cout << "Contact " << i <<  " was added succefully!" << std::endl;
+			std::cout << "/////////////////////////////" <<std::endl;
 		}
 		else if (c == "SEARCH" || c == "2")
 		{
 			pb.search(pb.contact);
+			std::cout << "/////////////////////////////" <<std::endl;
 		}
 		else if (c == "EXIT" || c == "3")
 		{

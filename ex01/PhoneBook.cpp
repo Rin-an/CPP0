@@ -13,21 +13,11 @@ void	PhoneBook::add(Contact *c, int i)
 	std::string	str;
 
 	std::cout << "************ADD************" << std::endl;
-	std::cout << "First Name*: ";
-	std::getline(std::cin, str);
-	c[i].set_fn(str);
-	std::cout << "Last Name*: ";
-	std::getline(std::cin, str);
-	c[i].set_ln(str);
-	std::cout << "Nickname*: ";
-	std::getline(std::cin, str);
-	c[i].set_nickname(str);
-	std::cout << "Phone Number*: ";
-	std::getline(std::cin, str);
-	c[i].set_pn(str);
-	std::cout << "Darkest Secret*: ";
-	std::getline(std::cin, str);
-	c[i].set_secret(str);
+	add_fn(&c[i]);
+	add_ln(&c[i]);
+	add_nn(&c[i]);
+	add_pn(&c[i]);
+	add_secret(&c[i]);
 }
 
 void	PhoneBook::search(Contact *c)
@@ -36,6 +26,7 @@ void	PhoneBook::search(Contact *c)
 	std::string	str;
 	char	tab[4][11] = {"index", "first name", "last name", "nickname"};
 
+	std::cout << "*************SEARCH*************" << std::endl;
 	i = -1;
 	while (++i < 4)
 	{
@@ -53,5 +44,6 @@ void	PhoneBook::search(Contact *c)
 		ft_resize_print(c[i].get_nickname());
 		std::cout << std::endl;
 	}
-	search_print(c);
+	while (!search_print(c))
+		std::cout << "Wrong index please enter a valid one. PS: you'll be stuck in this loop until you enter a valid index lol." << std::endl;
 }
