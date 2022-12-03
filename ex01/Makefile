@@ -4,7 +4,7 @@ SRCS = PhoneBook.cpp Contact.cpp main.cpp utils.cpp
 OBJS := $(SRCS:.cpp=.o)
 
 RM = rm -rf
-CC = c++ -std=c++98
+CC = c++ -Wall -Werror -Wextra -std=c++98
 
 $(NAME) : $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)

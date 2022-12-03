@@ -19,6 +19,7 @@ int	search_print(Contact *c)
 	std::string			s;
 
 	std::cout << "So... who do you want to check now? Please enter the related index" << std::endl;
+	std::cout << "Index: ";
 	std::getline(std::cin, s);
 	istream << s;
 	istream >> i;

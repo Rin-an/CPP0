@@ -6,9 +6,9 @@ FLAGS = -Werror -Wextra -Wall
 RM = rm -rf
 
 $(NAME) : $(OBJ)
-	c++ -std=c++98 $(OBJ) -o $(NAME)
+	c++ $(FLAGS) -std=c++98 $(OBJ) -o $(NAME)
 %.o : %.c
-	c++ -std=c++98 $(FLAGS) -c $< -o $@
+	c++ $(FLAGS) -std=c++98 $(FLAGS) -c $< -o $@
 
 all : $(NAME)
 
